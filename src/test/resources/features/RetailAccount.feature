@@ -20,7 +20,7 @@ Scenario: Verify User can add a payment method
     And User click on Add a payment method link
     And User fill Debit or credit card information
     |cardNumber|nameOnCard|expirationMonth|expirationYear|securityCode|
-    |1234567898765432 |David |06 |2024 |888|
+    |1234567298465432 |David |06 |2024 |888|
     And User click on Add your card button
     Then a message should be displayed ‘Payment Method added successfully’
     

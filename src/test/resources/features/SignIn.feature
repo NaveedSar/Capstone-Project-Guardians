@@ -1,4 +1,4 @@
-@Regression
+@Regression 
 Feature: Sign in Feature
 
 Background: 
@@ -17,6 +17,6 @@ Scenario: Verify user can create an account into Retail Website
     And User click on Create New Account button
     And User fill the signUp information with below data
     |name|email|password|confirmPassword|
-    |DavidT|david.jaan123555@gmail.com|David123$|David123$|
+    |DavidT|david.jaan1235456@gmail.com|David123$|David123$|
     And User click on SignUp button
     Then User should be logged into account page
