@@ -1,3 +1,4 @@
+@Regression
 Feature: Retail Account Page
 
 Background:
@@ -9,7 +10,7 @@ Background:
 @UpdateProfile
 Scenario: Verify User can update Profile Information
     When User click on Account option
-    And User update Name 'Davidss' and Phone '7035556677'
+    And User update Name 'Davidd' and Phone '7035556677'
     And User click on Update button
     Then user profile information should be updated
     
