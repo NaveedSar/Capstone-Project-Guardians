@@ -172,7 +172,7 @@ public class RetailOrderSteps extends CommonUtility{
 	}
 	@When("User select the Return Reason {string}")
 	public void userSelectTheReturnReason(String Reason) {
-		selectByVisibleText(pomFactory.orderPage().returnReason, Reason);
+		selectByVisibleText(pomFactory.orderPage().cancelReason, Reason);
 		logger.info("user select the return reason successfully");
 
 	}

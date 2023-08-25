@@ -2,7 +2,6 @@ package tek.capstone.guardians.pages;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -70,9 +69,6 @@ public class RetailOrderPage extends BaseSetup {
 	
 	@FindBy(xpath ="//button[text()='Return Items']")
 	public List<WebElement> returnItemsList;
-	
-	@FindBy(id="reasonInput")
-	public WebElement returnReason;
 	
 	@FindBy (xpath= "(//input[@type='checkbox'])[1]")
 	public WebElement selectReturnItem;
