@@ -10,7 +10,7 @@ Background:
 @UpdateProfile
 Scenario: Verify User can update Profile Information
     When User click on Account option
-    And User update Name 'DavidSecondse' and Phone '7035550080'
+    And User update Name 'DavidSecond' and Phone '7035557080'
     And User click on Update button
     Then user profile information should be updated
     
@@ -20,7 +20,7 @@ Scenario: Verify User can add a payment method
     And User click on Add a payment method link
     And User fill Debit or credit card information
     |cardNumber|nameOnCard|expirationMonth|expirationYear|securityCode|
-    |2345672984610087|David |06 |2024 |888|
+    |2345672988810087|David |06 |2024 |888|
     And User click on Add your card button
     Then a message should be displayed ‘Payment Method added successfully’
     
@@ -32,7 +32,7 @@ Scenario: Verify User can edit Debit or Credit card
     And User click on Edit option of card section
     And user edit information with below data
     |cardNumber|nameOnCard|expirationMonth|expirationYear|securityCode|
-    |2222400405556780 |Davidss |08 |2028 |789 |
+    |2222400405550280 |Davidss |08 |2028 |789 |
     And user click on Update Your Card button
     Then a message should be displayed ‘Payment Method updated Successfully’
     
@@ -51,7 +51,7 @@ Scenario: Verify User can remove Debit or Credit card
     And User click on Add address option
     And user fill new address form with below information
     |country |fullName |phoneNumber |streetAddress |apt |city |state |zipCode |
-    |United States |David jaan |7035006770 |251 main St |304 |Chantilly |Virginia |20142 |
+    |United States |David jaan |7037706770 |251 main St |305 |Chantilly |Virginia |20142 |
     And User click Add Your Address button
     Then a message should be displayed ‘Address Added Successfully’
     
@@ -62,7 +62,7 @@ Scenario: Verify User can remove Debit or Credit card
     And User click on edit address option
     And user fill new address form with below information
     |country|fullName|phoneNumber|streetAddress|apt       |city     | state |zipCode   |
-    |United States |David john |7036025006 |306 Rock Street |500 |Chantilly |Virginia |20121 |
+    |United States |David john |7036025116 |306 Rock Street |501 |Chantilly |Virginia |20121 |
     And User click update Your Address button
     Then a message should be displayed ‘Address Updated Successfully’
     
