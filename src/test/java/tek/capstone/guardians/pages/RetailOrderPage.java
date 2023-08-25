@@ -59,7 +59,7 @@ public class RetailOrderPage extends BaseSetup {
 	@FindBy(xpath = "//button[text()='Cancel The Order']")
 	public List <WebElement> cancelBttn;
 	
-	@FindBy(xpath ="//select[@id='reasonInput']")
+	@FindBy(id ="reasonInput")
 	public WebElement cancelReason;
 	
 	@FindBy(xpath ="//button[text()='Cancel']")
