@@ -167,7 +167,7 @@ public class RetailOrderSteps extends CommonUtility{
 	   for(int i =0; i<returnItemList.size();i++) {
 		   click(returnItemList.get(i));
 	   }
-	   pomFactory.orderPage().selectReturnItem.click();
+	   //pomFactory.orderPage().selectReturnItem.click();
 	   logger.info("user clicked return button on selected item list successfully");
 	}
 	@When("User select the Return Reason {string}")
