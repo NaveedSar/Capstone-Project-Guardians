@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		tags = "@Regression",
+		tags = "@ReturnOrder",
 		features = ("classpath:features"),
 		glue = "tek.capstone.guardians",
 		dryRun = false,
