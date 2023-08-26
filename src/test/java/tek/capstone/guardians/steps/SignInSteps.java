@@ -8,6 +8,7 @@ import org.junit.Assert;
 import io.cucumber.java.en.*;
 import tek.capstone.guardians.pages.POMFactory;
 import tek.capstone.guardians.utilities.CommonUtility;
+import tek.capstone.guardians.utilities.DataGenerator;
 
 public class SignInSteps extends CommonUtility {
 
@@ -59,8 +60,8 @@ public class SignInSteps extends CommonUtility {
 	public void userFillTheSignUpInformationWithBelowData(io.cucumber.datatable.DataTable dataTable) {
 
 		List<Map<String, String>> info = dataTable.asMaps(String.class, String.class);
-		sendText(pomFactory.signInPage().nameInputField, info.get(0).get("name"));
-		sendText(pomFactory.signInPage().emailInputField, info.get(0).get("email"));
+		sendText(pomFactory.signInPage().nameInputField, DataGenerator.addressGenerator(info.get(0).get("name")));
+		sendText(pomFactory.signInPage().emailInputField, DataGenerator.addressGenerator(info.get(0).get("email")));
 		sendText(pomFactory.signInPage().passwordInputField, info.get(0).get("password"));
 		sendText(pomFactory.signInPage().confirmPasswordField, info.get(0).get("confirmPassword"));
 		logger.info("User information entered successfully");

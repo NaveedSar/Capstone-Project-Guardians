@@ -8,6 +8,7 @@ import org.junit.Assert;
 import io.cucumber.java.en.*;
 import tek.capstone.guardians.pages.POMFactory;
 import tek.capstone.guardians.utilities.CommonUtility;
+import tek.capstone.guardians.utilities.DataGenerator;
 
 public class RetailAccountSteps extends CommonUtility{
 	
@@ -23,9 +24,9 @@ public class RetailAccountSteps extends CommonUtility{
 	@When("User update Name {string} and Phone {string}")
 	public void userUpdateNameAndPhone(String Name, String Phone) {
 		clearTextUsingSendKeys(pomFactory.retailAccount().nameInputField);
-	    sendText(pomFactory.retailAccount().nameInputField, Name);
+	    sendText(pomFactory.retailAccount().nameInputField,DataGenerator.addressGenerator(Name));
 	    clearTextUsingSendKeys(pomFactory.retailAccount().phoneInputField);
-	    sendText(pomFactory.retailAccount().phoneInputField, Phone);
+	    sendText(pomFactory.retailAccount().phoneInputField, DataGenerator.addressGenerator(Phone));
 	    logger.info("user enter name and phone successfully");
 	}
 	@When("User click on Update button")
@@ -53,16 +54,16 @@ public class RetailAccountSteps extends CommonUtility{
 	public void userFillDebitOrCreditCardInformation(io.cucumber.datatable.DataTable dataTable) {
 	   List<Map <String , String>> cardInfo = dataTable.asMaps(String.class, String.class);
 	   clearTextUsingSendKeys(pomFactory.retailAccount().cardNumber);
-	   sendText(pomFactory.retailAccount().cardNumber, cardInfo.get(0).get("cardNumber"));
+	   sendText(pomFactory.retailAccount().cardNumber, DataGenerator.addressGenerator(cardInfo.get(0).get("cardNumber")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().nameOnCard);
-	   sendText(pomFactory.retailAccount().nameOnCard, cardInfo.get(0).get("nameOnCard"));
+	   sendText(pomFactory.retailAccount().nameOnCard, DataGenerator.addressGenerator(cardInfo.get(0).get("nameOnCard")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().expirationMonth);
-	   sendText(pomFactory.retailAccount().expirationMonth, cardInfo.get(0).get("expirationMonth"));
+	   sendText(pomFactory.retailAccount().expirationMonth,cardInfo.get(0).get("expirationMonth"));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().expirationYear);
-	   sendText(pomFactory.retailAccount().expirationYear, cardInfo.get(0).get("expirationYear"));
+	   sendText(pomFactory.retailAccount().expirationYear,cardInfo.get(0).get("expirationYear"));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().securityCode);
 	   sendText(pomFactory.retailAccount().securityCode, cardInfo.get(0).get("securityCode"));
@@ -88,6 +89,9 @@ public class RetailAccountSteps extends CommonUtility{
 	
 	//Update payment
 	
+	
+	
+	
 	@And ("User select payment card")
 	public void userSelectPaymentCard() {
 		click(pomFactory.retailAccount().selectMasterCard);
@@ -103,10 +107,10 @@ public class RetailAccountSteps extends CommonUtility{
 	public void userEditInformationWithBelowData(io.cucumber.datatable.DataTable dataTable) {
 		List<Map<String, String>> updateInfo = dataTable.asMaps(String.class, String.class);
 		clearTextUsingSendKeys(pomFactory.retailAccount().cardNumber);
-		sendText(pomFactory.retailAccount().cardNumber, updateInfo.get(0).get("cardNumber"));
+		sendText(pomFactory.retailAccount().cardNumber, DataGenerator.addressGenerator(updateInfo.get(0).get("cardNumber")));
 		
 		clearTextUsingSendKeys(pomFactory.retailAccount().nameOnCard);
-		sendText(pomFactory.retailAccount().nameOnCard, updateInfo.get(0).get("nameOnCard"));
+		sendText(pomFactory.retailAccount().nameOnCard,DataGenerator.addressGenerator(updateInfo.get(0).get("nameOnCard")));
 		
 		clearTextUsingSendKeys(pomFactory.retailAccount().expirationMonth);
 		sendText(pomFactory.retailAccount().expirationMonth, updateInfo.get(0).get("expirationMonth"));
@@ -163,28 +167,28 @@ public class RetailAccountSteps extends CommonUtility{
 	public void userFillNewAddressFormWithBelowInformation(io.cucumber.datatable.DataTable dataTable) {
 	   List <Map<String, String>> addressInfo = dataTable.asMaps(String.class, String.class);
 	   clearTextUsingSendKeys(pomFactory.retailAccount().countrySelect);
-	   selectByVisibleText(pomFactory.retailAccount().countrySelect, addressInfo.get(0).get("country"));
+	   selectByVisibleText(pomFactory.retailAccount().countrySelect, DataGenerator.addressGenerator(addressInfo.get(0).get("country")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().addressFieldName);
-	   sendText(pomFactory.retailAccount().addressFieldName, addressInfo.get(0).get("fullName"));
+	   sendText(pomFactory.retailAccount().addressFieldName,DataGenerator.addressGenerator(addressInfo.get(0).get("fullName")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().addressPhoneField);
-	   sendText(pomFactory.retailAccount().addressPhoneField, addressInfo.get(0).get("phoneNumber"));
+	   sendText(pomFactory.retailAccount().addressPhoneField, DataGenerator.addressGenerator(addressInfo.get(0).get("phoneNumber")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().streetField);
-	   sendText(pomFactory.retailAccount().streetField, addressInfo.get(0).get("streetAddress"));
+	   sendText(pomFactory.retailAccount().streetField, DataGenerator.addressGenerator(addressInfo.get(0).get("streetAddress")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().apartmentField);
-	   sendText(pomFactory.retailAccount().apartmentField, addressInfo.get(0).get("apt"));
+	   sendText(pomFactory.retailAccount().apartmentField,DataGenerator.addressGenerator(addressInfo.get(0).get("apt")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().cityField);
-	   sendText(pomFactory.retailAccount().cityField, addressInfo.get(0).get("city"));
+	   sendText(pomFactory.retailAccount().cityField,DataGenerator.addressGenerator(addressInfo.get(0).get("city")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().stateField);
-	   selectByVisibleText(pomFactory.retailAccount().stateField, addressInfo.get(0).get("state"));
+	   selectByVisibleText(pomFactory.retailAccount().stateField,DataGenerator.addressGenerator(addressInfo.get(0).get("state")));
 	   
 	   clearTextUsingSendKeys(pomFactory.retailAccount().zipCodeField);
-	   sendText(pomFactory.retailAccount().zipCodeField, addressInfo.get(0).get("zipCode"));
+	   sendText(pomFactory.retailAccount().zipCodeField, DataGenerator.addressGenerator(addressInfo.get(0).get("zipCode")));
 	   
 	   logger.info("user entered address info successfully");
 	   
@@ -205,12 +209,18 @@ public class RetailAccountSteps extends CommonUtility{
 	}
 	
 	//Update address info
-	
+	@When("User click on Account options")
+	public void userClickOnAccountOptions() {
+	    click(pomFactory.retailAccount().accountBttn);
+	    logger.info("user click on account option successfully");
+	}
 	@When("User click on edit address option")
 	public void userClickOnEditAddressOption() {
 	   click(pomFactory.retailAccount().editAddressBttn);
 	   logger.info("user click on edit address button successfully");
 	}
+	
+	
 	@When("User click update Your Address button")
 	public void userClickUpdateYourAddressButton() {
 	    click(pomFactory.retailAccount().updateYourAddressBttn);
