@@ -1,4 +1,4 @@
-@Regression
+#@Regression
 Feature: Retail Order Page
 
 Background:

@@ -156,7 +156,7 @@ public class RetailOrderSteps extends CommonUtility{
 	    for(int i=0; i>orderLists.size();i++) {
 	    	if(orderLists.get(i).getText().equalsIgnoreCase("Hide Details")) {
 	    }else if(orderLists.get(i).getText().equalsIgnoreCase("Show Details")) {
-	    	pomFactory.orderPage().returnItemsList.get(i);
+	    	click(pomFactory.orderPage().returnItemsList.get(i));
 	    }
 	    }
 	    logger.info("user select the first item on orders successfully");
@@ -167,7 +167,7 @@ public class RetailOrderSteps extends CommonUtility{
 		
 	   List<WebElement> returnItemL = pomFactory.orderPage().returnItemsList;
 	   for(int i =0; i<returnItemL.size();i++) {
-		   click(returnItemL.get(i));
+		   click(returnItemL.get(0));
 	   }
 	   logger.info("user clicked return button on selected item list successfully");
 	}
