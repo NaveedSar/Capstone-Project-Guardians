@@ -1,4 +1,4 @@
-#@Regression
+@Regression
 Feature: Retail Order Page
 
 Background:
@@ -47,7 +47,7 @@ Scenario: Verify User can place an order with Shipping address and payment Metho
     
 @ReturnOrder   
  Scenario: Verify User can Return the order
-    And User click on Orders section
+    And User click on Orders sections
     And User click on first order in list returning
     And User click on Return Items button
     And User select the Return Reason 'Item damaged'

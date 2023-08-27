@@ -112,11 +112,11 @@ public class RetailOrderSteps extends CommonUtility{
 	}
 	@When("User click on first order in list")
 	public void userClickOnFirstOrderInList() {
-	   List <WebElement> orderList = pomFactory.orderPage().ordersList;
-	   for(int i =0; i<orderList.size();i++) {
-		   if (orderList.get(i).getText().equalsIgnoreCase("Hide Details")) {
+	   List <WebElement> orderListing = pomFactory.orderPage().ordersList;
+	   for(int i =0; i<orderListing.size();i++) {
+		   if (orderListing.get(i).getText().equalsIgnoreCase("Hide Details")) {
 			   
-		   }else if (orderList.get(i).getText().equalsIgnoreCase("Show Details")) {
+		   }else if (orderListing.get(i).getText().equalsIgnoreCase("Show Details")) {
 			  click(pomFactory.orderPage().ordersList.get(i));
 		   }
 	   }
@@ -132,8 +132,9 @@ public class RetailOrderSteps extends CommonUtility{
 	    logger.info("user clicked cancel on select item successfully");
 	}
 	@When("User select the cancelation Reason {string}")
-	public void userSelectTheCancelationReason(String Reason) {
-	    selectByVisibleText(pomFactory.orderPage().cancelReason, Reason);
+	public void userSelectTheCancelationReason(String CancelR) {
+	    selectByVisibleText(pomFactory.orderPage().cancelReason, CancelR);
+	    logger.info("cancel reason was selected successfully");
 	}
 	@When("User click on Cancel Order button")
 	public void userClickOnCancelOrderButton() {
@@ -150,13 +151,20 @@ public class RetailOrderSteps extends CommonUtility{
 
 	//Return Item from order list
 	
+	@When("User click on Orders sections")
+	public void userClickOnOrdersSections() {
+	    click(pomFactory.orderPage().ordersBttn);
+	    logger.info("user clicked on orders page successfullt");
+	}
+	
 	@When("User click on first order in list returning")
 	public void userClickOnFirstOrderInListReturning() {
 	    List <WebElement> orderLists = pomFactory.orderPage().ordersList;
-	    for(int i=0; i>orderLists.size();i++) {
+	    for(int i=0; i<orderLists.size();i++) {
 	    	if(orderLists.get(i).getText().equalsIgnoreCase("Hide Details")) {
+	    		
 	    }else if(orderLists.get(i).getText().equalsIgnoreCase("Show Details")) {
-	    	click(pomFactory.orderPage().returnItemsList.get(i));
+	    	click(pomFactory.orderPage().ordersList.get(i));
 	    }
 	    }
 	    logger.info("user select the first item on orders successfully");
